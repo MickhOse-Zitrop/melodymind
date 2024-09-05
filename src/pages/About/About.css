@@ -1,0 +1,83 @@
+@font-face {
+    font-family: "Bebas Neue";
+    src: url('/fonts/Bebas.ttf');
+}
+
+.about-section {
+    padding: 95px 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #1A1A1A;
+}
+
+.about-section .about-text {
+    margin: 17px 0px 43px 0px;
+}
+
+.about-section button {
+    padding: 12px 24px;
+    font-size: 18px;
+}
+
+.about-title {
+    font-size: 48px;
+    font-family: "Bebas Neue";
+    text-align: center;
+}
+
+.about-text {
+    color: #A6A6A6;
+    font-size: 18px;
+    text-align: center;
+}
+
+.about-world {
+    padding: 83px 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.about-image {
+    margin-top: 83px;
+}
+
+.about-image img {
+    width: 100%;
+    object-fit: contain;
+}
+
+.about-team {
+    padding: 78px 0px 102px 0px;
+    background-color: #1A1A1A;
+}
+
+.about-team .about-title {
+    margin-bottom: 5px;
+}
+
+.about-team-section {
+    padding-top: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.about-member {
+    margin: 60px auto;
+    text-align: center;
+}
+
+.about-member h2 {
+    margin-top: 14px;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.about-member p {
+    color: #ccc;
+}

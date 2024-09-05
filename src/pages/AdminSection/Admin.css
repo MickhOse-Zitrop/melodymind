@@ -1,0 +1,19 @@
+.admin-section {
+    padding: 20px 0px;
+}
+
+.admin-side {
+    /* align-self: flex-start; */
+    width: 230px;
+    background-color: #141414;
+    border: 1px solid rgba(255, 255, 255, 12.6%);
+    border-radius: 5px;
+}
+
+.admin-side-list {
+    padding: 24px 0px;
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    justify-content: center;
+}

@@ -1,0 +1,291 @@
+.settings-container {
+    padding: 40px 0px 150px 0px;
+}
+
+.settings-photo-confirm {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.75);
+    z-index: 100;
+}
+
+.settings-photo-confirm-container {
+    padding: 5px 30px;
+    display: flex;
+    align-items: center;
+    height: 55%;
+    width: 50%;
+    background-color: #141414;
+    border-radius: 12px;
+}
+
+.settings-photo-confirm-image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 85%;
+    width: 50%;
+}
+
+.settings-photo-confirm-image-container {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    height: 300px;
+    width: 300px;
+}
+
+.settings-photo-confirm-image-container img {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.settings-photo-confirm-buttons {
+    padding: 0px 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+}
+
+.settings-photo-confirm-buttons button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 30px;
+    width: 80%;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 600;
+    background-color: #005FF8;
+    border-radius: 5px;
+}
+
+.settings-photo-confirm-buttons button .spinner,
+.settings-text button .spinner {
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background: radial-gradient(farthest-side, #fff 94%, #0000) top/3.8px 3.8px no-repeat,
+        conic-gradient(#0000 30%, #fff);
+    mask: radial-gradient(farthest-side, #0000 calc(100% - 3.8px), #000 0);
+    animation: spinner-c7wet2 1s infinite linear;
+}
+
+.settings-photo-confirm-buttons button:hover {
+    filter: brightness(1.15);
+}
+
+.settings-photo-confirm-buttons button:first-child {
+    margin-bottom: 15px;
+    background-color: #686868;
+}
+
+.settings-title {
+    font-size: 36px;
+    font-weight: 600;
+}
+
+.settings-section {
+    display: flex;
+    padding: 20px 0px;
+}
+
+.settings-side-section {
+    align-self: flex-start;
+    padding: 24px 0px;
+    width: 230px;
+    border: 1px solid rgba(255, 255, 255, 12.6%);
+    border-radius: 5px;
+}
+
+.settings-side-section-li {
+    padding: 2.5px 20px;
+    color: #B8B8B8;
+    transition: 150ms;
+    cursor: pointer;
+}
+
+.settings-side-section-li:hover {
+    color: #fff;
+}
+
+.settings-side-section-li.active {
+    color: #fff;
+    border-left: 1px solid #fff;
+}
+
+.settings-section-main {
+    display: flex;
+    justify-content: center;
+    flex-basis: calc(100% - 230px);
+}
+
+.settings-section-main-intro {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #CCCCCC;
+    font-size: 20px;
+}
+
+.settings-section-main form {
+    display: flex;
+    flex-direction: column;
+    width: 650px;
+}
+
+.settings-image {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    margin-bottom: 43px;
+}
+
+.settings-image img {
+    height: 80px;
+    width: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.settings-image div {
+    margin-left: 24px;
+    padding: 5px 16px;
+    height: 30px;
+    color: #fff;
+    font-size: 14px;
+    background-color: #005FF8;
+    border-radius: 7px;
+    transition: 150ms;
+}
+
+.settings-image div:hover {
+    filter: brightness(1.15);
+}
+
+.settings-image div * {
+    cursor: pointer;
+}
+
+.settings-image input {
+    position: absolute;
+    pointer-events: none;
+    opacity: 0;
+}
+
+.settings-image i {
+    margin-left: 8px;
+    font-size: 13px;
+}
+
+.settings-text,
+.settings-text div {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.settings-text div .placeholder {
+    position: absolute;
+    top: calc(50% + 2px);
+    left: 10px;
+    color: #686868;
+    pointer-events: none;
+}
+
+.settings-text label,
+.settings-text div {
+    margin-bottom: 5px;
+}
+
+.settings-text label:not(:first-child),
+.settings-text div:not(:first-child) {
+    margin-top: 20px;
+}
+
+.settings-text input {
+    height: 40px;
+    padding: 0px 10px;
+    color: #fff;
+    background-color: #141414;
+    border: 1px solid #383838;
+    border-radius: 5px;
+    transition: 150ms;
+}
+
+.settings-text input:focus,
+.settings-text textarea:focus {
+    border-color: #005FF8;
+}
+
+.settings-text textarea {
+    padding: 5px 10px;
+    color: #fff;
+    background: linear-gradient(0deg, rgb(20, 20, 20) 0%, rgb(40, 40, 40) 50%);
+    border: 1px solid #383838;
+    border-radius: 5px;
+    box-shadow: 0px 4px 1px 0px rgba(0, 0, 0, 0.25) inset;
+    transition: 150ms;
+    resize: none;
+}
+
+.settings-text button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 9px 12px;
+    height: 40px;
+    width: 170px;
+    position: absolute;
+    bottom: -60px;
+    color: #fff;
+    font-size: 14px;
+    background-color: #005FF8;
+    border-radius: 5px;
+    transition: 150ms;
+}
+
+.settings-text-list {
+    margin-top: 15px;
+}
+
+.settings-text-list li {
+    padding: 15px 5px;
+    border-top: 1px solid #383838;
+}
+
+.settings-text-list li:last-child {
+    border-bottom: 1px solid #383838;
+}
+
+.settings-text-list h3 {
+    color: #B8B8B8;
+    font-weight: 500;
+}
+
+.settings-text-list section {
+    margin-top: 5px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.settings-text-list label {
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.settings-text-list a {
+    color: #0B8AFF;
+    cursor: pointer;
+}

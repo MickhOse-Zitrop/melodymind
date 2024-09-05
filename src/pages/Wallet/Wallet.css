@@ -1,0 +1,76 @@
+.wallet-container {
+    padding-top: 40px;
+}
+
+.wallet-title {
+    font-size: 36px;
+    font-weight: 600;
+}
+
+.wallet-section {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 0px;
+}
+
+.wallet-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.wallet-form-title {
+    font-size: 18px;
+}
+
+.wallet-form input {
+    margin-top: 15px;
+    padding: 9px 15px;
+    color: #fff;
+    font-size: 14px;
+    text-align: right;
+    background: #383838;
+    border: 1px solid #707070;
+    border-radius: 7px;
+}
+
+.wallet-form button {
+    margin-top: 15px;
+    padding: 10px 0px;
+    color: #fff;
+    font-size: 14px;
+    background-color: #005FF8;
+    border-radius: 7px;
+    transition: 150ms;
+}
+
+.wallet-form button:hover {
+    filter: brightness(1.15);
+}
+
+.wallet-form button:disabled {
+    color: rgba(204, 204, 204, 0.2);
+    background-color: #262626;
+    cursor: default;
+}
+
+.wallet-form button:disabled:hover {
+    filter: brightness(1);
+}
+
+/* Для Chrome и Safari */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Для Firefox */
+input[type="number"] {
+    -moz-appearance: textfield;
+    appearance: textfield;
+}
+
+/* Для IE и Edge */
+input[type="number"]::-ms-clear {
+    display: none;
+}

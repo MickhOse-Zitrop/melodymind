@@ -1,0 +1,83 @@
+.main-section {
+    height: 362px;
+    background-color: #1A1A1A;
+}
+
+.section-title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 60px;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.section-title h4 {
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.section-title h4 i {
+    font-size: 9px;
+    transform: translate(0, -1px);
+}
+
+.track-section {
+    display: flex;
+    flex-direction: column;
+    margin-right: 15px;
+    padding: 10px;
+    width: 214px;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0);
+    transition: 150ms;
+}
+
+.track-section:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.track-section div {
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.track-section div:hover::after {
+    display: block;
+    content: '';
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.track-section img {
+    border-radius: 12px;
+    margin-bottom: 5px;
+}
+
+.track-item {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.track-item:hover {
+    text-decoration: underline;
+}
+
+#price {
+    color: #0c7ee7;
+    text-decoration: none;
+}
+
+#title {
+    color: #fff;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+#author {
+    color: #bebebe;
+}

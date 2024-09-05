@@ -1,0 +1,244 @@
+dialog {
+    padding: 25px;
+    /* position: fixed; */
+    top: 50%;
+    left: 50%;
+    width: 400px;
+    background-color: rgba(26, 26, 26, 0.8);
+    border-radius: 12px;
+    transform: translate(-50%, -50%);
+    overflow-x: hidden;
+    z-index: 10;
+}
+
+dialog::backdrop {
+    background-color: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(8px);
+}
+
+/* .authorization+.backdrop {
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(4px);
+} */
+
+.sign-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.sign-title {
+    margin-bottom: 32px;
+    color: var(--main-color);
+    font-size: 20px;
+}
+
+.sign-title button {
+    position: absolute;
+    top: 25px;
+    left: 25px;
+    color: #ccc;
+    font-size: 24px;
+    background: none;
+}
+
+.sign-self,
+.sign-auth {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    user-select: none;
+}
+
+.sign-self label {
+    color: var(--main-color);
+    font-size: var(--main-font-size);
+}
+
+.sign-self input {
+    margin-top: 5px;
+    margin-bottom: 10px;
+    padding: 9px;
+    height: 36px;
+    width: 100%;
+    color: var(--main-color);
+    font-size: var(--main-font-size);
+    border: 1px solid #383838;
+    border-radius: 5px;
+    background-color: var(--dark-backgorund-color);
+}
+
+.sign-self input:focus {
+    border: 1px solid #005FF8;
+}
+
+.sign-self button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 12px;
+    padding: 8px 10px;
+}
+
+.sign-self button .spinner {
+    width: 21px;
+    height: 21px;
+    border-radius: 50%;
+    background: radial-gradient(farthest-side, #fff 94%, #0000) top/3.8px 3.8px no-repeat,
+        conic-gradient(#0000 30%, #fff);
+    mask: radial-gradient(farthest-side, #0000 calc(100% - 3.8px), #000 0);
+    animation: spinner-c7wet2 1s infinite linear;
+}
+
+.hr-line {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    color: #9F9F9F;
+    font-size: 14px;
+    margin: 2px 0px 14px 0px;
+}
+
+.hr-line hr {
+    height: 1px;
+    width: calc(50% - 20px);
+    background-color: #9F9F9F;
+}
+
+.sign-auth button {
+    margin-bottom: 12px;
+    padding: 8px 10px;
+    height: 37px;
+    color: #fff;
+    font-size: 14px;
+    text-align: center;
+    border-radius: 5px;
+    background-color: #262626;
+    transition: 150ms;
+}
+
+.sign-auth button img {
+    position: absolute;
+    left: 10%;
+}
+
+.sign-policy {
+    color: var(--main-color);
+    font-size: 12px;
+    text-align: center;
+}
+
+.sign-policy a {
+    color: #6574FF;
+    text-decoration: underline;
+}
+
+.login-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    padding: 16px;
+    height: 76px;
+    background-color: #262626;
+    border: 1px solid #383838;
+    border-radius: 5px;
+    /* width: 100%; */
+}
+
+.login-section img {
+    height: 42px;
+    width: 42px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.login-section h5 {
+    color: #fff;
+    font-size: 12px;
+}
+
+.login-section input {
+    margin: 0;
+    padding: 0;
+    color: #fff;
+    font-size: 16px;
+    background: none;
+    border: none;
+    text-overflow: ellipsis;
+}
+
+.login-section button {
+    padding: 0;
+    color: #fff;
+    font-size: 18px;
+    background: none;
+}
+
+.login-section button i {
+    transform: translate(0%, 50%);
+}
+
+.check-box {
+    position: relative;
+}
+
+.check-box input {
+    display: none;
+}
+
+.check-box label {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    padding-left: 40px;
+    position: relative;
+    width: 235px;
+    color: #707070;
+    font-size: 12px;
+}
+
+.check-box label::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0%;
+    height: 20px;
+    width: 20px;
+    border: 2px solid #383838;
+    border-radius: 3px;
+    transform: translate(0, -50%);
+}
+
+.check-box input:checked~label::before {
+    background-color: #005FF8;
+}
+
+.password-label-login {
+    display: flex;
+    justify-content: space-between;
+}
+
+.password-label-login a {
+    color: #9F9F9F;
+}
+
+.password-input {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.password-input input {
+    padding-right: 35px;
+}
+
+.password-input i {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    color: #9F9F9F;
+    cursor: pointer;
+}

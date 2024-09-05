@@ -1,0 +1,369 @@
+.tracks-container {
+    padding: 34px 0px;
+}
+
+.tracks-search {
+    padding-bottom: 39px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.tracks-search-form {
+    margin-top: 16px;
+    margin-right: 15px;
+    position: relative;
+    height: 38px;
+}
+
+.tracks-search-submit {
+    margin-left: 13px;
+    position: absolute;
+    height: 100%;
+    color: #fff;
+    background: none;
+}
+
+.tracks-search-input {
+    padding: 7px 38px;
+    padding-right: 15px;
+    height: 100%;
+    width: 190px;
+    color: #fff;
+    background-color: #262626;
+    border-radius: 20px;
+}
+
+.tracks-search-tag {
+    margin-top: 16px;
+    margin-right: 15px;
+    padding: 8px 10px;
+    font-size: 12px;
+    background-color: #262626;
+    border: 2px solid #383838;
+    border-radius: 20px;
+    transition: 150ms ease-in-out;
+    cursor: pointer;
+}
+
+.tracks-search-tag:hover {
+    filter: brightness(1.15);
+}
+
+.tracks-refresh {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 1px;
+    background-color: #262626;
+}
+
+.tracks-refresh-button {
+    padding: 7px 11.5px;
+    color: #0B8AFF;
+    background-color: #081B39;
+    border-radius: 20px;
+    transition: 150ms ease-in-out;
+}
+
+.tracks-refresh-button:hover {
+    filter: brightness(1.15);
+}
+
+.tracks-refresh-button i {
+    margin-right: 5px;
+}
+
+.tracks-body {
+    padding-top: 30px;
+}
+
+.tracks-filter {
+    margin-bottom: 25px;
+    display: flex;
+    justify-content: space-between;
+    user-select: none;
+}
+
+.tracks-filter-form {
+    display: flex;
+    align-items: center;
+}
+
+.tracks-filter-form-button {
+    padding: 7px 10px;
+    margin-right: 25px;
+    color: #fff;
+    font-size: 14px;
+    background-color: #262626;
+    border-radius: 5px;
+    transition: 150ms ease-in-out;
+}
+
+.tracks-filter-form-button:hover {
+    filter: brightness(1.15);
+}
+
+.tracks-filter-form-button i {
+    margin-right: 5px;
+}
+
+.tracks-filter-option {
+    margin-right: 25px;
+    color: #9F9F9F;
+    transition: 150ms ease-in-out;
+    cursor: pointer;
+}
+
+.tracks-filter-option:hover,
+.tracks-filter-option.active {
+    color: #fff;
+}
+
+.tracks-filter-option i {
+    font-size: 12px;
+}
+
+.tracks-filter-sort {
+    display: flex;
+    align-items: center;
+}
+
+.tracks-filter-sort-fav {
+    margin-right: 16px;
+    height: 32px;
+    width: 32px;
+    color: #fff;
+    background-color: #262626;
+    border-radius: 50%;
+}
+
+.tracks-filter-sort-fav:hover {
+    filter: brightness(1.15);
+}
+
+.tracks-filter-sort-option {
+    display: flex;
+}
+
+.tracks-filter-sort-title {
+    margin-right: 8px;
+    color: #9F9F9F;
+}
+
+.tracks-filter-sort-item {
+    cursor: pointer;
+}
+
+.tracks-filter-sort-item i {
+    font-size: 12px;
+}
+
+.tracks-main {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.tracks-section {
+    margin: 20px auto;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    width: 214px;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0);
+    transition: 150ms;
+}
+
+.tracks-section:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.tracks-section div {
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.tracks-section div:hover::after {
+    display: block;
+    content: '';
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.tracks-section img {
+    border-radius: 12px;
+    margin-bottom: 5px;
+}
+
+.tracks-item {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.tracks-item:hover {
+    text-decoration: underline;
+}
+
+#price {
+    color: #0c7ee7;
+    text-decoration: none;
+}
+
+#title {
+    color: #fff;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+#author {
+    color: #bebebe;
+}
+
+.tracks-filter-section {
+    display: block;
+    position: relative;
+}
+
+.tracks-filter-section.false {
+    display: none;
+}
+
+.tracks-filter-menu {
+    margin-top: 10px;
+    padding: 16px 20px;
+    position: absolute;
+    left: 0;
+    background-color: #0A0A0A;
+    border: 1px solid #383838;
+    border-radius: 8px;
+    transition: 150ms ease-in-out;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.tracks-filter-menu.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.tracks-filter-menu-search {
+    padding: 8px 13px;
+    display: flex;
+    position: relative;
+    background-color: #262626;
+    border: 1px solid #383838;
+    border-radius: 3px;
+}
+
+.tracks-filter-menu-search-button,
+.tracks-filter-menu-search-input {
+    color: #fff;
+    background: none;
+}
+
+.tracks-filter-menu-search-button {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 36px;
+}
+
+.tracks-filter-menu-search-input {
+    padding-left: 23px;
+    text-align: center;
+}
+
+.tracks-filter-menu-option-list {
+    margin-top: 3px;
+}
+
+.tracks-filter-menu-option-item {
+    padding: 13px 0px;
+    position: relative;
+}
+
+.tracks-filter-menu-option-item-input {
+    display: none;
+}
+
+.tracks-filter-menu-option-item-label {
+    padding-left: 40px;
+    display: flex;
+    position: relative;
+    cursor: pointer;
+}
+
+.tracks-filter-menu-option-item-label::before {
+    content: '';
+    position: absolute;
+    left: 5px;
+    height: 20px;
+    width: 20px;
+    border: 2px solid #383838;
+    border-radius: 5px;
+}
+
+.tracks-filter-menu-option-item-input:checked~.tracks-filter-menu-option-item-label::before {
+    background-color: #005FF8;
+}
+
+.tracks-filter-menu-radio-item {
+    padding: 8px 0px;
+    position: relative;
+}
+
+.tracks-filter-menu-radio-item-input {
+    display: none;
+}
+
+.tracks-filter-menu-radio-item-label {
+    padding-left: 40px;
+    display: flex;
+    position: relative;
+    cursor: pointer;
+}
+
+.tracks-filter-menu-radio-item-label::before {
+    content: '';
+    position: absolute;
+    left: 5px;
+    height: 20px;
+    width: 20px;
+    border: 2px solid #383838;
+    border-radius: 50%;
+}
+
+.tracks-filter-menu-radio-item-input:checked~.tracks-filter-menu-radio-item-label::before {
+    background-color: #005FF8;
+}
+
+.tracks-filter-menu-range {
+    display: flex;
+}
+
+.tracks-filter-menu-range input {
+    padding: 0 5px;
+    width: 70px;
+    color: #fff;
+    text-align: right;
+    background: none;
+    border-bottom: 1px solid #383838;
+}
+
+.tracks-filter-menu-range input::-webkit-outer-spin-button,
+.tracks-filter-menu-range input::-webkit-inner-spin-button {
+    appearance: none;
+}
+
+.tracks-filter-menu-range input:first-child {
+    margin-right: 15px;
+}
+
+.tracks-filter-menu-range input:last-child {
+    margin-left: 15px;
+}

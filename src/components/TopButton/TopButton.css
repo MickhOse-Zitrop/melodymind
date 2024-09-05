@@ -1,0 +1,11 @@
+.top-button {
+    display: none;
+    position: fixed;
+    left: 40px;
+    bottom: 105px;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    background-color: #ccc;
+    z-index: 101;
+}
