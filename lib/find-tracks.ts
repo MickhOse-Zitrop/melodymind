@@ -153,5 +153,5 @@ export const findTracks = async (params: GetSearchParams) => {
       .sort((a, b) => b.trackType[0].price - a.trackType[0].price);
   }
 
-  return tracks.slice(pageTracks, pageTracks + 15);
+  return tracks.slice(pageTracks, pageTracks + 5);
 };
