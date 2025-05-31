@@ -1,0 +1,243 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")
+  directUrl = env("POSTGRES_URL_NON_POOLING")
+}
+
+model User {
+  id Int @id @default(autoincrement())
+
+  name        String?
+  surname     String?
+  displayName String  @unique
+  location    String?
+  bio         String?
+  imageUrl    String?
+  wallet      Int     @default(0)
+
+  phone      String?   @unique
+  email      String    @unique
+  password   String
+  link       String?   @unique
+  verified   DateTime?
+  provider   String?
+  providerId String?
+  role       UserRole  @default(USER)
+
+  SC String? @unique
+  YT String? @unique
+  TT String? @unique
+  TH String? @unique
+
+  cart             Cart?
+  verificationCode VerificationCode?
+  favorite         Favorite?
+  subscriber       Subscriber?
+  author           Author?
+  tracks           Track[]
+  purchase         Purchase[]
+  playlist         Playlist[]
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Category {
+  id Int @id @default(autoincrement())
+
+  name   String  @unique
+  tracks Track[]
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Track {
+  id Int @id @default(autoincrement())
+
+  title       String
+  imageUrl    String?
+  likes       Int     @default(0)
+  listens     Int     @default(0)
+  bpm         Int?
+  demo        Boolean @default(false)
+  tags        String?
+  downloadUrl String?
+
+  trackType    TrackType[]
+  playlistItem PlaylistItem[]
+  favoriteItem FavoriteItem[]
+  category     Category[]
+
+  user   User @relation(fields: [userId], references: [id])
+  userId Int
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model TrackType {
+  id Int @id @default(autoincrement())
+
+  name    TrackTypeName
+  price   Int
+  fileUrl String
+
+  cartItems    CartItem[]
+  purchaseItem PurchaseItem[]
+
+  track   Track @relation(fields: [trackId], references: [id])
+  trackId Int
+}
+
+model Playlist {
+  id Int @id @default(autoincrement())
+
+  title    String
+  imageUrl String?
+  likes    Int     @default(0)
+
+  playlistItem PlaylistItem[]
+
+  user   User @relation(fields: [userId], references: [id])
+  userId Int
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model PlaylistItem {
+  id Int @id @default(autoincrement())
+
+  track      Track    @relation(fields: [trackId], references: [id])
+  playlist   Playlist @relation(fields: [playlistId], references: [id])
+  playlistId Int
+  trackId    Int
+}
+
+model Favorite {
+  id Int @id @default(autoincrement())
+
+  user   User @relation(fields: [userId], references: [id])
+  userId Int  @unique
+
+  favoriteItem FavoriteItem[]
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model FavoriteItem {
+  id Int @id @default(autoincrement())
+
+  track      Track    @relation(fields: [trackId], references: [id])
+  favorite   Favorite @relation(fields: [favoriteId], references: [id])
+  favoriteId Int
+  trackId    Int
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Cart {
+  id Int @id @default(autoincrement())
+
+  totalAmount Int     @default(0)
+  token       String?
+
+  items CartItem[]
+
+  user   User? @relation(fields: [userId], references: [id])
+  userId Int?  @unique
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model CartItem {
+  id Int @id @default(autoincrement())
+
+  trackType   TrackType @relation(fields: [trackTypeId], references: [id])
+  cart        Cart      @relation(fields: [cartId], references: [id])
+  trackTypeId Int
+  cartId      Int
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Purchase {
+  id Int @id @default(autoincrement())
+
+  token       String?
+  totalAmount Int
+  items       PurchaseItem[]
+  paymentId   String?
+  status      OrderStatus
+
+  user   User @relation(fields: [userId], references: [id])
+  userId Int
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model PurchaseItem {
+  id Int @id @default(autoincrement())
+
+  trackType   TrackType @relation(fields: [trackTypeId], references: [id])
+  purchase    Purchase  @relation(fields: [purchaseId], references: [id])
+  trackTypeId Int
+  purchaseId  Int
+}
+
+model Author {
+  id Int @id
+
+  user        User?        @relation(fields: [id], references: [id])
+  subscribers Subscriber[]
+}
+
+model Subscriber {
+  id Int @id
+
+  user   User?    @relation(fields: [id], references: [id])
+  author Author[]
+}
+
+model VerificationCode {
+  id Int @id @default(autoincrement())
+
+  code String
+
+  user   User @relation(fields: [userId], references: [id])
+  userId Int  @unique
+
+  createdAt DateTime @default(now())
+
+  @@unique([userId, code])
+}
+
+enum UserRole {
+  USER
+  ADMIN
+}
+
+enum OrderStatus {
+  PENDING
+  SUCCEEDED
+  CANCELLED
+}
+
+enum TrackTypeName {
+  mp3
+  wav
+  wav_unlimited
+  stems
+  unlimited
+  exclusive
+}
