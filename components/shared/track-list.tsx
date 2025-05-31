@@ -106,7 +106,7 @@ export const TrackList: React.FC<Props> = ({ tracks, className }) => {
       <Suspense>
         <PaginationWithLinks
           totalCount={tracks.length}
-          pageSize={15}
+          pageSize={14}
           page={currentPage}
           className="mt-12"
         />
